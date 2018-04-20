@@ -1,8 +1,7 @@
 import java.util.ArrayList;
 
-import solutionsearchers.BackTrack;
-import solutionsearchers.BackTrackCircleDetection;
-import threejugs.Node;
+import solutionsearchers.BackTrackPathLengthLimit;
+import threejugs.NodeWithDepth;
 import threejugs.State;
 
 public class Main {
@@ -12,9 +11,13 @@ public class Main {
 		State start = new State(jugs);
 		
 		/*BackTrack backTrack = new BackTrack(new Node(start, null, null, new ArrayList<>()));
-		backTrack.search();*/
+		backTrack.search();
 		
 		BackTrackCircleDetection backTrackCircleDetection = new BackTrackCircleDetection(new Node(start, null, null, new ArrayList<>()));
-		backTrackCircleDetection.search();
+		backTrackCircleDetection.search();*/
+		
+		int pathLengthLimit = 4;
+		BackTrackPathLengthLimit backTrackPathLengthLimit = new BackTrackPathLengthLimit(new NodeWithDepth(start, null, null, new ArrayList<>(), 0), pathLengthLimit);
+		backTrackPathLengthLimit.search();
 	}
 }
