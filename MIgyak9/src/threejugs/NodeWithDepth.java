@@ -5,12 +5,12 @@ import java.util.List;
 public class NodeWithDepth {
 
 	State state;
-	Node parent;
+	NodeWithDepth parent;
 	Operator operator;
 	List<Operator> triedOperators;
 	int depth;
 	
-	public NodeWithDepth(State state, Node parent, Operator operator, List<Operator> triedOperators, int depth) {
+	public NodeWithDepth(State state, NodeWithDepth parent, Operator operator, List<Operator> triedOperators, int depth) {
 		this.state = state;
 		this.parent = parent;
 		this.operator = operator;
@@ -26,11 +26,11 @@ public class NodeWithDepth {
 		this.state = state;
 	}
 	
-	public Node getParent() {
+	public NodeWithDepth getParent() {
 		return parent;
 	}
 	
-	public void setParent(Node parent) {
+	public void setParent(NodeWithDepth parent) {
 		this.parent = parent;
 	}
 	
