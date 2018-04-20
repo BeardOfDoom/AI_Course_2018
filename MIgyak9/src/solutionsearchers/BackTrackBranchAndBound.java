@@ -6,14 +6,17 @@ import threejugs.NodeWithDepth;
 import threejugs.Operator;
 import threejugs.State;
 
-public class BackTrackPathLengthLimit {
+public class BackTrackBranchAndBound {
 
 	NodeWithDepth actual;
 	int pathLengthLimit;
+	boolean didFindSolution;
+	NodeWithDepth solution;
 
-	public BackTrackPathLengthLimit(NodeWithDepth start, int pathLengthLimit) {
+	public BackTrackBranchAndBound(NodeWithDepth start, int pathLengthLimit) {
 		actual = start;
 		this.pathLengthLimit = pathLengthLimit;
+		didFindSolution = false;
 	}
 	
 	public void search() {
@@ -21,8 +24,11 @@ public class BackTrackPathLengthLimit {
 			if(actual == null)
 				break;
 			
-			if(actual.getState().isGoal())
-				break;
+			if(actual.getState().isGoal()) {
+				didFindSolution = true;
+				solution = actual;
+				pathLengthLimit = actual.getDepth();
+			}
 			
 			if(actual.getDepth() == pathLengthLimit) {
 				actual = actual.getParent();
@@ -52,8 +58,8 @@ public class BackTrackPathLengthLimit {
 				actual = actual.getParent();
 		}
 		
-		if(actual != null) {
-			System.out.println(actual);
+		if(didFindSolution) {
+			System.out.println(solution);
 		} else {
 			System.out.println("Nincs megoldás");
 		}

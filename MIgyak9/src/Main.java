@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-import solutionsearchers.BackTrackPathLengthLimit;
+import solutionsearchers.BackTrackBranchAndBound;
 import threejugs.NodeWithDepth;
 import threejugs.State;
 
@@ -14,10 +14,14 @@ public class Main {
 		backTrack.search();
 		
 		BackTrackCircleDetection backTrackCircleDetection = new BackTrackCircleDetection(new Node(start, null, null, new ArrayList<>()));
-		backTrackCircleDetection.search();*/
+		backTrackCircleDetection.search();
 		
 		int pathLengthLimit = 4;
 		BackTrackPathLengthLimit backTrackPathLengthLimit = new BackTrackPathLengthLimit(new NodeWithDepth(start, null, null, new ArrayList<>(), 0), pathLengthLimit);
-		backTrackPathLengthLimit.search();
+		backTrackPathLengthLimit.search();*/
+		
+		int pathLengthLimit = 4;
+		BackTrackBranchAndBound backTrackBranchAndBound = new BackTrackBranchAndBound(new NodeWithDepth(start, null, null, new ArrayList<>(), 0), pathLengthLimit);
+		backTrackBranchAndBound.search();
 	}
 }
