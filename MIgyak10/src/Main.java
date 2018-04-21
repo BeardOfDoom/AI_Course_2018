@@ -1,4 +1,5 @@
 import solutionsearchers.BreadthFirst;
+import solutionsearchers.DepthFirst;
 import threejugs.State;
 
 public class Main {
@@ -9,5 +10,8 @@ public class Main {
 		
 		BreadthFirst breadthFirst = new BreadthFirst(start);
 		breadthFirst.search();
+		
+		DepthFirst depthFirst = new DepthFirst(start);
+		depthFirst.search();
 	}
 }
