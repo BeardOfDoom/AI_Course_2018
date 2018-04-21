@@ -1,3 +1,4 @@
+import solutionsearchers.BestFirst;
 import solutionsearchers.BreadthFirst;
 import solutionsearchers.DepthFirst;
 import threejugs.State;
@@ -13,5 +14,8 @@ public class Main {
 		
 		DepthFirst depthFirst = new DepthFirst(start);
 		depthFirst.search();
+		
+		BestFirst bestFirst = new BestFirst(start);
+		bestFirst.search();
 	}
 }
