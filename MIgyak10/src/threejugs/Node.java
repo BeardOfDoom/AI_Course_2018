@@ -1,19 +1,15 @@
 package threejugs;
 
-import java.util.List;
-
 public class Node {
 
 	State state;
 	Node parent;
 	Operator operator;
-	List<Operator> triedOperators;
 	
-	public Node(State state, Node parent, Operator operator, List<Operator> triedOperators) {
+	public Node(State state, Node parent, Operator operator) {
 		this.state = state;
 		this.parent = parent;
 		this.operator = operator;
-		this.triedOperators = triedOperators;
 	}
 	
 	public State getState() {
@@ -38,14 +34,6 @@ public class Node {
 	
 	public void setOperator(Operator operator) {
 		this.operator = operator;
-	}
-	
-	public List<Operator> getTriedOperators() {
-		return triedOperators;
-	}
-	
-	public void setTriedOperators(List<Operator> triedOperators) {
-		this.triedOperators = triedOperators;
 	}
 	
 	@Override

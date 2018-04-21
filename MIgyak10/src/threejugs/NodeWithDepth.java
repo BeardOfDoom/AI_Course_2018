@@ -1,20 +1,16 @@
 package threejugs;
 
-import java.util.List;
-
 public class NodeWithDepth {
 
 	State state;
 	NodeWithDepth parent;
 	Operator operator;
-	List<Operator> triedOperators;
 	int depth;
 	
-	public NodeWithDepth(State state, NodeWithDepth parent, Operator operator, List<Operator> triedOperators, int depth) {
+	public NodeWithDepth(State state, NodeWithDepth parent, Operator operator, int depth) {
 		this.state = state;
 		this.parent = parent;
 		this.operator = operator;
-		this.triedOperators = triedOperators;
 		this.depth = depth;
 	}
 	
@@ -40,14 +36,6 @@ public class NodeWithDepth {
 	
 	public void setOperator(Operator operator) {
 		this.operator = operator;
-	}
-	
-	public List<Operator> getTriedOperators() {
-		return triedOperators;
-	}
-	
-	public void setTriedOperators(List<Operator> triedOperators) {
-		this.triedOperators = triedOperators;
 	}
 	
 	public int getDepth() {
