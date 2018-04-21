@@ -12,8 +12,8 @@ public class BackTrackCircleDetection {
 	Node actual;
 	List<State> reachedStates;
 
-	public BackTrackCircleDetection(Node start) {
-		actual = start;
+	public BackTrackCircleDetection(State start) {
+		actual = new Node(start, null, null, new ArrayList<>());
 		reachedStates = new ArrayList<>();
 	}
 	

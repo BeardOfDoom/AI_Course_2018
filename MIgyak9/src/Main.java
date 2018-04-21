@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-
 import solutionsearchers.BackTrackBranchAndBound;
-import threejugs.NodeWithDepth;
 import threejugs.State;
 
 public class Main {
@@ -10,18 +7,18 @@ public class Main {
 		int[] jugs = {5, 0, 0};
 		State start = new State(jugs);
 		
-		/*BackTrack backTrack = new BackTrack(new Node(start, null, null, new ArrayList<>()));
+		/*BackTrack backTrack = new BackTrack(new Node(start);
 		backTrack.search();
 		
-		BackTrackCircleDetection backTrackCircleDetection = new BackTrackCircleDetection(new Node(start, null, null, new ArrayList<>()));
+		BackTrackCircleDetection backTrackCircleDetection = new BackTrackCircleDetection(start);
 		backTrackCircleDetection.search();
 		
 		int pathLengthLimit = 4;
-		BackTrackPathLengthLimit backTrackPathLengthLimit = new BackTrackPathLengthLimit(new NodeWithDepth(start, null, null, new ArrayList<>(), 0), pathLengthLimit);
+		BackTrackPathLengthLimit backTrackPathLengthLimit = new BackTrackPathLengthLimit(start, pathLengthLimit);
 		backTrackPathLengthLimit.search();*/
 		
 		int pathLengthLimit = 4;
-		BackTrackBranchAndBound backTrackBranchAndBound = new BackTrackBranchAndBound(new NodeWithDepth(start, null, null, new ArrayList<>(), 0), pathLengthLimit);
+		BackTrackBranchAndBound backTrackBranchAndBound = new BackTrackBranchAndBound(start, pathLengthLimit);
 		backTrackBranchAndBound.search();
 	}
 }

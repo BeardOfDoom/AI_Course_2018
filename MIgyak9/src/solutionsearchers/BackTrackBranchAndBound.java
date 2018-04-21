@@ -13,8 +13,8 @@ public class BackTrackBranchAndBound {
 	boolean didFindSolution;
 	NodeWithDepth solution;
 
-	public BackTrackBranchAndBound(NodeWithDepth start, int pathLengthLimit) {
-		actual = start;
+	public BackTrackBranchAndBound(State start, int pathLengthLimit) {
+		actual = new NodeWithDepth(start, null, null, new ArrayList<>(), 0);
 		this.pathLengthLimit = pathLengthLimit;
 		didFindSolution = false;
 	}

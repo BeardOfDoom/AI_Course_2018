@@ -10,8 +10,8 @@ public class BackTrack {
 
 	Node actual;
 
-	public BackTrack(Node start) {
-		actual = start;
+	public BackTrack(State start) {
+		actual = new Node(start, null, null, new ArrayList<>());
 	}
 	
 	

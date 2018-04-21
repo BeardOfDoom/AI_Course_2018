@@ -2,6 +2,7 @@ package solutionsearchers;
 
 import java.util.ArrayList;
 
+import threejugs.Node;
 import threejugs.NodeWithDepth;
 import threejugs.Operator;
 import threejugs.State;
@@ -11,8 +12,8 @@ public class BackTrackPathLengthLimit {
 	NodeWithDepth actual;
 	int pathLengthLimit;
 
-	public BackTrackPathLengthLimit(NodeWithDepth start, int pathLengthLimit) {
-		actual = start;
+	public BackTrackPathLengthLimit(State start, int pathLengthLimit) {
+		actual = new NodeWithDepth(start, null, null, new ArrayList<>(), 0);
 		this.pathLengthLimit = pathLengthLimit;
 	}
 	
