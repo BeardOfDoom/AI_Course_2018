@@ -26,11 +26,6 @@ public class State {
 	public String toString() {
 		return "State [jugs=" + Arrays.toString(jugs) + "]";
 	}
-	
-	public int heuristic() {
-		//return Math.abs(4 - jugs[0]);
-		return 4 - jugs[0] >= 0 ? 4 - jugs[0] : 500;
-	}
 
 	@Override
 	public int hashCode() {
