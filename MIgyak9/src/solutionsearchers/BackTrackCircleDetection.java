@@ -24,10 +24,11 @@ public class BackTrackCircleDetection {
 				break;
 			if(actual.getState().isGoal())
 				break;
-			if(reachedStates.contains(actual.getState()))
+			if(reachedStates.contains(actual.getState())) {
 				actual = actual.getParent();
-			
-			reachedStates.add(actual.getState());
+			} else {
+				reachedStates.add(actual.getState());
+			}
 			
 			boolean didUseOperator = false;
 			
